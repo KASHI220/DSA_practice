@@ -6,6 +6,7 @@ public class Info {
         Info obj = new Info();
         obj.createStudent(member);
         obj.display(member);
+        obj.topperStudent(member);
 
     }
 
@@ -44,5 +45,25 @@ public class Info {
             }
             System.out.println();
         }
+    }
+    public void topperStudent(Candidate[] member){
+        float max=member[0].getAvg();
+        for(int i=1;i< member.length;i++) {
+            if (member[i].getAvg() > max) {
+                max = member[i].getAvg();
+            }
+        }
+        for (int i=0;i<member.length;i++){
+            if(member[i].getAvg()==max){
+                System.out.println("Student of Rollnumber : "+member[i].getrollNum()+" is the toper of the class");
+            }
+        }
+
+
+//              System.out.println("Student : "+member[i].getName()+"  is the toper of the class")
+
+
+
+
     }
 }
