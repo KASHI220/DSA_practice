@@ -9,6 +9,7 @@ import java.util.List;
 public class UserPage {
     public static void main(String[] args) {
         int num = 5;
+
         List<ItemList> itemList = new ArrayList<ItemList>();
         UserPage products = new UserPage();
         products.createItems(itemList, num);
@@ -17,8 +18,10 @@ public class UserPage {
         System.out.println("Here is the our Products List:");
         products.display(itemList);
 //        System.out.println(itemList.size());
-        UserSelection selection =new UserSelection();
-        selection.selectItem(itemList);
+        UserSelection selection = new UserSelection();
+
+        int[] units = selection.selectItem(itemList);
+        selection.totalPayable(itemList, units);
 
     }
 
