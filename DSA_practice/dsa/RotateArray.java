@@ -1,4 +1,4 @@
-package DSA_practice.dsa.RotateArray;
+package DSA_practice.dsa;
 
 import java.util.Arrays;
 
@@ -68,4 +68,5 @@ public class RotateArray {
         }
     }
 }
+
 
