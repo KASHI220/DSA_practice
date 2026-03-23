@@ -17,8 +17,10 @@ public class UserPage {
         System.out.println("Here is the our Products List:");
         products.display(itemList);
 //        System.out.println(itemList.size());
-        UserSelection selection =new UserSelection();
-        selection.selectItem(itemList);
+        UserSelection selection = new UserSelection();
+//        selection.selectItem(itemList);
+        int[] units = selection.selectItem(itemList);
+        selection.totalPayable(itemList,units);
 
     }
 
