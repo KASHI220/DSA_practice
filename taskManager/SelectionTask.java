@@ -21,14 +21,15 @@ public class SelectionTask {
         } else if (jai == 1) {
             AddTasks addingNewTask = new AddTasks();
             addingNewTask.createTasks(tasks);
+            addingNewTask.display(tasks);
 
         } else {
             System.out.println("enter the correct index or option");
         }
 
-        for (Basics j : tasks) {
-            System.out.println(tasks);
-        }
+//        for (Basics j : tasks) {
+//            System.out.println(tasks);
+//        }
     }
 
 }
