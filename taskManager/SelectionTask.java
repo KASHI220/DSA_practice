@@ -71,14 +71,22 @@ public class SelectionTask {
                 System.out.println("ENTER THE TASK TYPE..");
                 System.out.println("1.BASIC TASKS...");
                 System.out.println("2.PERSONAL TASKS...");
+                System.out.println("3.WORK TASKS...");
+                System.out.println("0.EXIT...");
                 option = sc.nextInt();
-                CreateTasks obj = new CreateTasks();
+//                CreateTasks obj = new CreateTasks();
                 if (option == 1) {
 //            CreateTasks obj = new CreateTasks();
-                    obj.createTaskBasic(task);
+                    addingNewTask.createTaskBasic(task);
                 } else if (option == 2) {
 
-                    obj.createTasksPersonal(task);
+                    addingNewTask.createTasksPersonal(task);
+                }
+                else if(option==3){
+                    addingNewTask.createTaskWork(task);
+                }
+                else if(option==0){
+                    System.out.println("THANK YOU...!");
                 }
 //                addingNewTask.createTasks(tasks);
 //        } else if(choice== 2) {

@@ -18,7 +18,6 @@ public class RotateArray {
         int n = arr.length;
         k = k % n;
         if (k == 0) return;
-
         int[] temp = new int[k];
 
         // 1. Copy first k elements to temp

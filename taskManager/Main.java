@@ -6,29 +6,42 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<Basics> task = new ArrayList<Basics>();
+        CreateTasks obj = new CreateTasks();
         int option;
-        System.out.println("ENTER THE TASK TYPE..");
-        System.out.println("1.BASIC TASKS...");
-        System.out.println("2.PERSONAL TASKS...");
-        option= sc.nextInt();
-        CreateTasks obj =new CreateTasks();
-        if(option==1){
+
+        do {
+            try {
+                System.out.println("ENTER THE TASK TYPE..");
+                System.out.println("1.BASIC TASKS...");
+                System.out.println("2.PERSONAL TASKS...");
+                System.out.println("3.WORK TASKS...");
+                System.out.println("0.EXIT...");
+                option = sc.nextInt();
+
+                if (option == 1) {
 //            CreateTasks obj = new CreateTasks();
-            obj.createTaskBasic(task);
-        } else if (option==2) {
+                    obj.createTaskBasic(task);
+                } else if (option == 2) {
 
-            obj.createTasksPersonal(task);
-        }
+                    obj.createTasksPersonal(task);
+                } else if (option == 3) {
+                    obj.createTaskWork(task);
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("ENTER THE VALID INPUT " + e);
+                sc.next();
+                option = 1;
+            }
+        } while (option != 0);
 
 
-        SelectionTask select =new SelectionTask();
+        SelectionTask select = new SelectionTask();
         select.selectTask(task);
-        Main obj1 =new Main();
+        Main obj1 = new Main();
 
         obj1.display(task);
 
     }
-
 
 
     public void display(List<Basics> task) {

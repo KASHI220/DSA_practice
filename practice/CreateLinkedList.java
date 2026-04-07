@@ -1,80 +1,83 @@
 package practice;
 
-public class CreateLinkedList<T> {
-    private Node<T> head, tail;
-    private int size;
+import java.util.Scanner;
+import java.util.concurrent.Callable;
 
-    private static class Node<T> {
-        T data;
-        Node<T> next;
+public class CreateLinkedList {
 
-        Node(T data) {
-            this.data = data;
+    private static class Node {
+        private int value;
+        Node next;
+
+        public Node(int value) {
+            this.value = value;
             this.next = null;
         }
     }
 
-    public void add(T data) {
-        Node<T> newNode = new Node<>(data);
+    private Node head, tail;
+    private int size;
+
+    public CreateLinkedList() {
+        this.head = null;
+        this.tail = null;
+        size = 0;
+    }
+
+    public static void main(String[] args) {
+        CreateLinkedList list = new CreateLinkedList();
+        Scanner sc = new Scanner(System.in);
+        int choice = 1;
+        while (choice == 1) {
+            System.out.println("Enter 1 to add number OR  any number to exit..");
+            choice = sc.nextInt();
+            if (choice == 1) {
+                System.out.println("Add value to the list..");
+                int value = sc.nextInt();
+                list.add(value);
+            } else {
+                System.out.println(" Thank you...");
+            }
+        }
+        list.display();
+        list.removeHead();
+        list.display();
+
+    }
+
+    public void add(int value) {
+        Node newNode = new Node(value);
         if (head == null) {
-            head = tail = newNode;
+
+
+            head = newNode;
+            tail = newNode;
         } else {
             tail.next = newNode;
             tail = newNode;
+
         }
         size++;
     }
 
-    public T remove(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+    public void removeHead() {
+        if (head == null) {
+            System.out.println("list is empty..");
         }
-
-        T removedData;
-        if (index == 0) {
-            removedData = head.data;
-            head = head.next;
-            if (head == null) {
-                tail = null;
-            }
-        } else {
-            Node<T> prev = head;
-            for (int i = 0; i < index - 1; i++) {
-                prev = prev.next;
-            }
-            Node<T> target = prev.next;
-            removedData = target.data;
-            prev.next = target.next;
-
-            if (prev.next == null) {
-                tail = prev;
-            }
-        }
+        head = head.next;
         size--;
-        return removedData;
     }
 
     public void display() {
-        Node<T> current = head;
-        while (current != null) {
-            System.out.print(current.data + " -> ");
-            current = current.next;
+
+        Node temp = head;
+        if (temp == null) {
+            System.out.println("List is empty..");
         }
-        System.out.println("null");
-        System.out.println("Current Size: " + size);
+        while (temp != null) {
+            System.out.print(temp.value + " ");
+            temp=temp.next;
+        }
+        System.out.println("size of list is:  " + size);
     }
-
-    public static void main(String[] args) {
-        CreateLinkedList<String> list = new CreateLinkedList<>();
-        list.add("Jai");
-        list.add("Shree");
-        list.add("Ram");
-
-        System.out.println("Initial List:");
-        list.display();
-
-        System.out.println("\nRemoving at index 1...");
-        list.remove(1);
-        list.display();
-    }
-} // Final closing brace for the class
+}
