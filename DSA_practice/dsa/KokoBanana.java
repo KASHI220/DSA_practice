@@ -2,8 +2,7 @@ package DSA_practice.dsa;
 
 public class KokoBanana {
     public static void main(String[] args) {
-        int [] arr = {1,4,5,7,8,9
-        };
+        int [] arr = {1,4,5,7,8,9};
         int h = 7;
         KokoBanana obj =new KokoBanana();
         int banana=obj.koko(arr,h);
