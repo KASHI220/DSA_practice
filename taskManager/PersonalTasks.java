@@ -16,10 +16,11 @@ public class PersonalTasks extends Basics {
     public String getProgress() {
         return progress;
     }
-    public String getNote(){
+
+    public String getNote() {
         return note;
     }
-        //    public PersonalTasks(int deadTime, String task)
+    //    public PersonalTasks(int deadTime, String task)
 //        super(deadTime, task);
 //
 //    }
@@ -36,8 +37,8 @@ public class PersonalTasks extends Basics {
 //        }
 
     @Override
-    public String toString(){
-        return super.toString()+" Progress :"+progress+" | Note :"+note;
+    public String toString() {
+        return super.toString() + " Progress :" + progress + " | Note :" + note;
     }
 
 }

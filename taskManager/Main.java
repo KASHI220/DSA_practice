@@ -41,6 +41,14 @@ public class Main {
 
         obj1.display(task);
 
+        FirstPriority obj2 = new FirstPriority();
+        obj2.priority(task);
+
+        obj1.display(task);
+
+        Search obj3 = new Search();
+        List<Basics> jai = obj3.searchInList(task);
+        System.out.println(jai);
     }
 
 

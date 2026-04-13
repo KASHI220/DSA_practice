@@ -4,7 +4,7 @@ public class LongestPrefix {
     public static void main(String[] args) {
 
 
-        String[] str = {"apple", "app", "apply", "approve"};
+        String[] str = {"apple", "application", "apply", "applrove"};
         LongestPrefix prefix = new LongestPrefix();
         String result = prefix.longPrefix(str);
         System.out.println(result);
@@ -19,7 +19,6 @@ public class LongestPrefix {
                     return str[0].substring(0, i);
                 }
             }
-
         }
         return str[0];
     }
